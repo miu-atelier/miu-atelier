@@ -7,7 +7,7 @@
         content="width=device-width, initial-scale=1">
 
   <meta name="description"
-        content="Miu Atelier｜白瀬みうのAIフォトコレクション。日常の、少し特別な瞬間。">
+        content="Miu Atelier｜白瀬みうのAIフォトコレクション。何気ない日常と、少し特別な瞬間をお届けします。">
 
   <meta name="theme-color" content="#f2e7e7">
 
@@ -21,6 +21,7 @@
       --muted: #796c70;
       --accent: #a76c7c;
       --accent-hover: #895565;
+      --white: #ffffff;
     }
 
     * {
@@ -66,6 +67,13 @@
       margin-bottom: 40px;
     }
 
+    h2 {
+      margin: 0 0 14px;
+      font-size: 22px;
+    }
+
+    /* 代表写真 */
+
     .hero {
       margin-bottom: 32px;
     }
@@ -77,13 +85,10 @@
       border-radius: 16px;
     }
 
-    h2 {
-      margin: 0 0 14px;
-      font-size: 22px;
-    }
+    /* 共通カード */
 
     .card {
-      background: #ffffff;
+      background: var(--white);
       border-radius: 16px;
       padding: 24px;
       box-shadow: 0 4px 20px #00000008;
@@ -99,6 +104,13 @@
       font-weight: bold;
       color: var(--accent);
     }
+
+    .small-text {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* 購入ボタン */
 
     .buy-button {
       display: block;
@@ -119,10 +131,50 @@
       background: var(--accent-hover);
     }
 
-    .small-text {
-      font-size: 13px;
+    /* 無料ギャラリー */
+
+    .gallery-intro {
+      margin: 0 0 20px;
+      font-size: 14px;
       color: var(--muted);
     }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .gallery-item {
+      margin: 0;
+      min-width: 0;
+    }
+
+    .gallery-item:first-child {
+      grid-column: 1 / -1;
+    }
+
+    .gallery-item img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      border-radius: 12px;
+      background: #eee4e5;
+    }
+
+    .gallery-item:first-child img {
+      aspect-ratio: 4 / 5;
+    }
+
+    .gallery-item figcaption {
+      padding: 8px 2px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* フッター */
 
     footer {
       padding: 32px 20px;
@@ -131,6 +183,12 @@
       font-size: 12px;
     }
 
+    footer p {
+      margin: 6px 0;
+    }
+
+    /* 小型スマートフォン */
+
     @media (max-width: 380px) {
       .card {
         padding: 20px;
@@ -138,14 +196,21 @@
 
       .buy-button {
         font-size: 14px;
+        padding: 15px 12px;
+      }
+
+      .gallery-grid {
+        gap: 8px;
       }
     }
+
   </style>
 </head>
 
 <body>
 
   <!-- ヘッダー -->
+
   <header>
     <h1>Miu Atelier</h1>
   </header>
@@ -153,16 +218,20 @@
   <main>
 
     <!-- 代表写真 -->
+
     <section class="hero">
+
       <img
         src="39CA2AA7-CDB6-497E-B7B4-91E2D59A04CE.png"
         alt="Miu Atelier 白瀬みうの公式メインビジュアル"
         fetchpriority="high"
         decoding="async"
       >
+
     </section>
 
-    <!-- 写真集 -->
+    <!-- 写真集 Vol.01 -->
+
     <section id="photobook">
 
       <h2>Photo Book</h2>
@@ -202,22 +271,89 @@
         </p>
 
       </div>
+
     </section>
 
     <!-- 無料ギャラリー -->
+
     <section id="gallery">
 
       <h2>Gallery</h2>
 
-      <div class="card">
-        <p>
-          無料フォトギャラリーは準備中です。
-        </p>
+      <p class="gallery-intro">
+        みうの日常を、少しだけお届け。
+      </p>
+
+      <div class="gallery-grid">
+
+        <!-- 1枚目：日常 -->
+
+        <figure class="gallery-item">
+
+          <img
+            src="B10CD55C-C421-4EE1-8186-2114724D040E.png"
+            alt="白瀬みうの日常"
+            loading="lazy"
+            decoding="async"
+          >
+
+          <figcaption>
+            01 — 日常
+          </figcaption>
+
+        </figure>
+
+        <!-- 2枚目：お出かけ -->
+
+        <figure class="gallery-item">
+
+          <img
+            src="56711571-7052-42E8-BD67-52C9D6299717.png"
+            alt="白瀬みうのお出かけ"
+            loading="lazy"
+            decoding="async"
+          >
+
+          <figcaption>
+            02 — お出かけ
+          </figcaption>
+
+        </figure>
+
+        <!-- 3枚目：特別な一枚 -->
+
+        <figure class="gallery-item">
+
+          <img
+            src="FDD843D0-D555-4D3A-92B5-E22BEEB27F37.png"
+            alt="白瀬みうの特別な一枚"
+            loading="lazy"
+            decoding="async"
+          >
+
+          <figcaption>
+            03 — 特別な一枚
+          </figcaption>
+
+        </figure>
+
       </div>
+
+      <!-- ギャラリーから写真集へ -->
+
+      <a
+        class="buy-button"
+        href="https://note.com/miu_atelier/n/n8fd9217c749a"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        もっとみうを見る｜Vol.01 →
+      </a>
 
     </section>
 
     <!-- 自己紹介 -->
+
     <section id="about">
 
       <h2>About Miu</h2>
@@ -245,7 +381,9 @@
   </main>
 
   <!-- フッター -->
+
   <footer>
+
     <p>
       白瀬みうは架空のAIキャラクターです。
     </p>
@@ -253,6 +391,7 @@
     <p>
       © 2026 Miu Atelier
     </p>
+
   </footer>
 
 </body>
