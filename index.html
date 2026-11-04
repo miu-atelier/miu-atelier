@@ -3,28 +3,51 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Miu Atelier｜白瀬みうのAIフォトコレクション">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+
+  <meta name="description"
+        content="Miu Atelier｜白瀬みうのAIフォトコレクション。日常の、少し特別な瞬間。">
+
+  <meta name="theme-color" content="#f2e7e7">
+
   <title>Miu Atelier | 白瀬みう</title>
 
   <style>
+    :root {
+      --background: #faf7f6;
+      --header: #f2e7e7;
+      --text: #302a2b;
+      --muted: #796c70;
+      --accent: #a76c7c;
+      --accent-hover: #895565;
+    }
+
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      background: #faf7f6;
-      color: #302a2b;
-      font-family: -apple-system, BlinkMacSystemFont,
-        "Helvetica Neue", sans-serif;
+      background: var(--background);
+      color: var(--text);
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Helvetica Neue",
+        "Hiragino Kaku Gothic ProN",
+        sans-serif;
       line-height: 1.7;
     }
 
     header {
       padding: 18px 20px;
       text-align: center;
-      background: #f2e7e7;
+      background: var(--header);
     }
 
     header h1 {
@@ -39,8 +62,12 @@
       padding: 16px;
     }
 
+    section {
+      margin-bottom: 40px;
+    }
+
     .hero {
-      margin: 0 0 32px;
+      margin-bottom: 32px;
     }
 
     .hero img {
@@ -50,17 +77,13 @@
       border-radius: 16px;
     }
 
-    section {
-      margin-bottom: 40px;
-    }
-
     h2 {
-      font-size: 22px;
       margin: 0 0 14px;
+      font-size: 22px;
     }
 
     .card {
-      background: #fff;
+      background: #ffffff;
       border-radius: 16px;
       padding: 24px;
       box-shadow: 0 4px 20px #00000008;
@@ -72,14 +95,33 @@
     }
 
     .price {
-      font-weight: bold;
-      color: #a76c7c;
       font-size: 20px;
+      font-weight: bold;
+      color: var(--accent);
     }
 
-    .notice {
-      color: #796c70;
-      font-size: 14px;
+    .buy-button {
+      display: block;
+      margin-top: 24px;
+      padding: 16px 20px;
+      border-radius: 30px;
+      background: var(--accent);
+      color: #ffffff;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      transition: background .2s;
+    }
+
+    .buy-button:hover,
+    .buy-button:focus-visible {
+      background: var(--accent-hover);
+    }
+
+    .small-text {
+      font-size: 13px;
+      color: var(--muted);
     }
 
     footer {
@@ -88,11 +130,22 @@
       color: #82777a;
       font-size: 12px;
     }
+
+    @media (max-width: 380px) {
+      .card {
+        padding: 20px;
+      }
+
+      .buy-button {
+        font-size: 14px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
+  <!-- ヘッダー -->
   <header>
     <h1>Miu Atelier</h1>
   </header>
@@ -103,48 +156,77 @@
     <section class="hero">
       <img
         src="39CA2AA7-CDB6-497E-B7B4-91E2D59A04CE.png"
-        alt="Miu Atelier 白瀬みうの代表写真"
+        alt="Miu Atelier 白瀬みうの公式メインビジュアル"
         fetchpriority="high"
+        decoding="async"
       >
     </section>
 
     <!-- 写真集 -->
     <section id="photobook">
+
       <h2>Photo Book</h2>
 
       <div class="card">
-        <h3>Vol.01 — はじめまして、みうです。</h3>
+
+        <h3>
+          Vol.01 — はじめまして、みうです。
+        </h3>
 
         <p>
-          白瀬みうの初めてのAIフォトコレクション。
-          何気ない日常や、少し特別な瞬間を
+          白瀬みうの初めての
+          AIフォトコレクション。
+        </p>
+
+        <p>
+          何気ない日常や、
+          少し特別な瞬間を
           20枚の写真にまとめました。
         </p>
 
-        <p class="price">全20枚 · 500円</p>
-
-        <p class="notice">
-          noteで販売中です。
-          購入リンクは準備中です。
+        <p class="price">
+          全20枚 · 500円
         </p>
+
+        <a
+          class="buy-button"
+          href="https://note.com/miu_atelier/n/n8fd9217c749a"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          写真集の詳細を見る｜note →
+        </a>
+
+        <p class="small-text">
+          ※販売・決済はnoteで行います。
+        </p>
+
       </div>
     </section>
 
     <!-- 無料ギャラリー -->
     <section id="gallery">
+
       <h2>Gallery</h2>
 
       <div class="card">
-        <p>無料フォトギャラリーは準備中です。</p>
+        <p>
+          無料フォトギャラリーは準備中です。
+        </p>
       </div>
+
     </section>
 
     <!-- 自己紹介 -->
     <section id="about">
+
       <h2>About Miu</h2>
 
       <div class="card">
-        <p>はじめまして、白瀬みうです。</p>
+
+        <p>
+          はじめまして、白瀬みうです。
+        </p>
 
         <p>
           何気ない日常や、
@@ -155,14 +237,22 @@
           ここでは私のフォトコレクションを
           紹介します。
         </p>
+
       </div>
+
     </section>
 
   </main>
 
+  <!-- フッター -->
   <footer>
-    <p>白瀬みうは架空のAIキャラクターです。</p>
-    <p>© 2026 Miu Atelier</p>
+    <p>
+      白瀬みうは架空のAIキャラクターです。
+    </p>
+
+    <p>
+      © 2026 Miu Atelier
+    </p>
   </footer>
 
 </body>
