@@ -3,152 +3,137 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5e8e8">
 
-  <meta name="description"
-        content="Miu Atelier｜白瀬みうのAIフォトコレクション。何気ない日常と、少し特別な瞬間をお届けします。">
+  <title>Miu Atelier | 白瀬みう 公式サイト</title>
+  <meta name="description" content="AIキャラクター白瀬みうの公式フォトギャラリー。無料写真とデジタル写真集を公開中。">
 
-  <meta name="theme-color" content="#f2e7e7">
-
-  <title>Miu Atelier | 白瀬みう</title>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VT0SB9G45P"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VT0SB9G45P');
+  </script>
 
   <style>
     :root {
-      --background: #faf7f6;
-      --header: #f2e7e7;
-      --text: #302a2b;
-      --muted: #796c70;
-      --accent: #a76c7c;
-      --accent-hover: #895565;
+      --bg: #faf7f7;
+      --pink: #f5e8e8;
+      --rose: #a77586;
+      --text: #302b2d;
+      --muted: #81787c;
       --white: #ffffff;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
-      background: var(--background);
+      background: var(--bg);
       color: var(--text);
-      font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Helvetica Neue",
-        "Hiragino Kaku Gothic ProN",
+      font-family: -apple-system, BlinkMacSystemFont,
+        "Hiragino Kaku Gothic ProN", "Yu Gothic",
         sans-serif;
-      line-height: 1.7;
+      line-height: 1.85;
     }
 
-    header {
-      padding: 18px 20px;
+    a { color: inherit; }
+
+    .site-header {
+      background: var(--pink);
       text-align: center;
-      background: var(--header);
+      padding: 20px 16px;
     }
 
-    header h1 {
+    .site-header h1 {
       margin: 0;
-      font-size: 20px;
-      letter-spacing: .08em;
+      font-size: 23px;
+      letter-spacing: 2px;
     }
 
-    main {
-      max-width: 640px;
-      margin: 0 auto;
-      padding: 16px;
+    .container {
+      width: min(100% - 32px, 760px);
+      margin: auto;
     }
-
-    section {
-      margin-bottom: 40px;
-    }
-
-    h2 {
-      margin: 0 0 14px;
-      font-size: 22px;
-    }
-
-    /* 代表写真 */
 
     .hero {
-      margin-bottom: 32px;
+      padding-top: 24px;
     }
 
     .hero img {
       display: block;
       width: 100%;
       height: auto;
-      border-radius: 16px;
+      border-radius: 18px;
     }
 
-    /* 共通カード */
+    .tagline {
+      text-align: center;
+      color: var(--muted);
+      margin: 22px 0 12px;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    section { margin: 48px 0; }
+
+    h2 {
+      font-size: 24px;
+      margin: 0 0 20px;
+      line-height: 1.4;
+    }
 
     .card {
       background: var(--white);
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: 0 4px 20px #00000008;
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 8px 28px rgba(70,40,50,.04);
     }
 
-    .card h3 {
-      margin-top: 0;
-      font-size: 19px;
+    .book-title {
+      font-size: 21px;
+      font-weight: 700;
+      line-height: 1.6;
     }
 
     .price {
-      font-size: 20px;
-      font-weight: bold;
-      color: var(--accent);
+      color: var(--rose);
+      font-size: 25px;
+      font-weight: 700;
+      margin: 16px 0;
     }
 
-    .small-text {
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    /* 購入ボタン */
-
-    .buy-button {
+    .button {
       display: block;
-      margin-top: 24px;
-      padding: 16px 20px;
-      border-radius: 30px;
-      background: var(--accent);
-      color: #ffffff;
+      width: 100%;
+      background: var(--rose);
+      color: white;
       text-align: center;
       text-decoration: none;
-      font-size: 16px;
-      font-weight: bold;
-      transition: background .2s;
+      border-radius: 999px;
+      padding: 15px 20px;
+      font-weight: 700;
+      margin-top: 20px;
     }
 
-    .buy-button:hover,
-    .buy-button:focus-visible {
-      background: var(--accent-hover);
+    .button:focus-visible {
+      outline: 3px solid #493a43;
+      outline-offset: 3px;
     }
 
-    /* 無料ギャラリー */
-
-    .gallery-intro {
-      margin: 0 0 20px;
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    .gallery-grid {
+    .gallery {
       display: grid;
-      grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-      gap: 12px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
     }
 
     .gallery-item {
       margin: 0;
-      min-width: 0;
     }
 
     .gallery-item:first-child {
@@ -158,211 +143,145 @@
     .gallery-item img {
       display: block;
       width: 100%;
-      aspect-ratio: 3 / 4;
-      object-fit: cover;
-      border-radius: 12px;
-      background: #eee4e5;
-    }
-
-    .gallery-item:first-child img {
-      aspect-ratio: 4 / 5;
+      height: auto;
+      border-radius: 14px;
     }
 
     .gallery-item figcaption {
-      padding: 8px 2px;
+      font-size: 13px;
+      color: var(--muted);
+      padding: 8px 3px;
+    }
+
+    .note {
       color: var(--muted);
       font-size: 13px;
     }
 
-    /* フッター */
+    .privacy {
+      font-size: 13px;
+      color: var(--muted);
+    }
 
     footer {
-      padding: 32px 20px;
       text-align: center;
-      color: #82777a;
+      padding: 40px 18px 60px;
+      color: var(--muted);
       font-size: 12px;
     }
 
-    footer p {
-      margin: 6px 0;
+    @media (max-width: 360px) {
+      .card { padding: 20px; }
+      h2 { font-size: 22px; }
     }
-
-    /* 小型スマートフォン */
-
-    @media (max-width: 380px) {
-      .card {
-        padding: 20px;
-      }
-
-      .buy-button {
-        font-size: 14px;
-        padding: 15px 12px;
-      }
-
-      .gallery-grid {
-        gap: 8px;
-      }
-    }
-
   </style>
 </head>
 
 <body>
 
-  <!-- ヘッダー -->
-
-  <header>
+  <header class="site-header">
     <h1>Miu Atelier</h1>
   </header>
 
-  <main>
+  <main class="container">
 
     <!-- 代表写真 -->
-
-    <section class="hero">
-
+    <div class="hero">
       <img
         src="39CA2AA7-CDB6-497E-B7B4-91E2D59A04CE.png"
-        alt="Miu Atelier 白瀬みうの公式メインビジュアル"
-        fetchpriority="high"
-        decoding="async"
-      >
+        alt="Miu Atelier 白瀬みう 代表写真"
+        fetchpriority="high">
+    </div>
 
-    </section>
+    <p class="tagline">
+      日常の、少し特別な瞬間。
+    </p>
 
-    <!-- 写真集 Vol.01 -->
-
+    <!-- 写真集 -->
     <section id="photobook">
-
       <h2>Photo Book</h2>
 
       <div class="card">
-
-        <h3>
+        <div class="book-title">
           Vol.01 — はじめまして、みうです。
-        </h3>
+        </div>
 
         <p>
-          白瀬みうの初めての
-          AIフォトコレクション。
-        </p>
-
-        <p>
-          何気ない日常や、
-          少し特別な瞬間を
+          白瀬みうの初めてのAIフォトコレクション。
+          何気ない日常や、少し特別な瞬間を
           20枚の写真にまとめました。
         </p>
 
-        <p class="price">
-          全20枚 · 500円
+        <p>
+          室内・カフェ・海辺・リゾートなど、
+          さまざまなシーンを収録しています。
+        </p>
+
+        <div class="price">全20枚・500円（税込）</div>
+
+        <p class="note">
+          noteの有料記事内で閲覧でき、
+          PDF形式でのダウンロードにも対応しています。
         </p>
 
         <a
-          class="buy-button"
+          class="button"
           href="https://note.com/miu_atelier/n/n8fd9217c749a"
           target="_blank"
           rel="noopener noreferrer"
-        >
-          写真集の詳細を見る｜note →
+          data-note-link="photobook">
+          写真集Vol.01をnoteで見る
         </a>
 
-        <p class="small-text">
-          ※販売・決済はnoteで行います。
+        <p class="note">
+          ※購入手続きはnoteで行います。
         </p>
-
       </div>
-
     </section>
 
     <!-- 無料ギャラリー -->
-
     <section id="gallery">
-
       <h2>Gallery</h2>
 
-      <p class="gallery-intro">
-        みうの日常を、少しだけお届け。
+      <p>
+        白瀬みうの3つの瞬間を無料公開中。
       </p>
 
-      <div class="gallery-grid">
-
-        <!-- 1枚目：日常 -->
+      <div class="gallery">
 
         <figure class="gallery-item">
-
           <img
             src="B10CD55C-C421-4EE1-8186-2114724D040E.png"
-            alt="白瀬みうの日常"
-            loading="lazy"
-            decoding="async"
-          >
-
-          <figcaption>
-            01 — 日常
-          </figcaption>
-
+            alt="白瀬みう 日常のポートレート"
+            loading="lazy">
+          <figcaption>01 — 日常</figcaption>
         </figure>
 
-        <!-- 2枚目：お出かけ -->
-
         <figure class="gallery-item">
-
           <img
             src="56711571-7052-42E8-BD67-52C9D6299717.png"
-            alt="白瀬みうのお出かけ"
-            loading="lazy"
-            decoding="async"
-          >
-
-          <figcaption>
-            02 — お出かけ
-          </figcaption>
-
+            alt="白瀬みう カフェでのひととき"
+            loading="lazy">
+          <figcaption>02 — お出かけ</figcaption>
         </figure>
 
-        <!-- 3枚目：特別な一枚 -->
-
         <figure class="gallery-item">
-
           <img
             src="FDD843D0-D555-4D3A-92B5-E22BEEB27F37.png"
-            alt="白瀬みうの特別な一枚"
-            loading="lazy"
-            decoding="async"
-          >
-
-          <figcaption>
-            03 — 特別な一枚
-          </figcaption>
-
+            alt="白瀬みう 海辺の夕景"
+            loading="lazy">
+          <figcaption>03 — 特別な一枚</figcaption>
         </figure>
 
       </div>
-
-      <!-- ギャラリーから写真集へ -->
-
-      <a
-        class="buy-button"
-        href="https://note.com/miu_atelier/n/n8fd9217c749a"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        もっとみうを見る｜Vol.01 →
-      </a>
-
     </section>
 
-    <!-- 自己紹介 -->
-
+    <!-- キャラクター紹介 -->
     <section id="about">
-
       <h2>About Miu</h2>
 
       <div class="card">
-
-        <p>
-          はじめまして、白瀬みうです。
-        </p>
+        <p>はじめまして、白瀬みうです。</p>
 
         <p>
           何気ない日常や、
@@ -373,26 +292,66 @@
           ここでは私のフォトコレクションを
           紹介します。
         </p>
-
       </div>
+    </section>
 
+    <!-- アクセス解析について -->
+    <section id="privacy">
+      <h2>Privacy</h2>
+
+      <div class="card privacy">
+        <p>
+          当サイトでは、利用状況の把握と
+          サイト改善のためにGoogle Analytics 4を
+          使用しています。
+        </p>
+
+        <p>
+          Google Analyticsでは、Cookie等を利用して
+          ページ閲覧やリンククリックなどの情報が
+          収集される場合があります。
+          これらの情報はGoogleのサービスを通じて
+          処理されます。
+        </p>
+
+        <p>
+          Googleによる情報の取り扱いについては、
+          以下をご確認ください。
+        </p>
+
+        <p>
+          <a href="https://policies.google.com/privacy?hl=ja"
+             target="_blank"
+             rel="noopener noreferrer">
+            Googleプライバシーポリシー
+          </a>
+        </p>
+      </div>
     </section>
 
   </main>
 
-  <!-- フッター -->
-
   <footer>
-
     <p>
-      白瀬みうは架空のAIキャラクターです。
+      白瀬みうはAIで制作された架空の
+      成人女性キャラクターです。
     </p>
-
-    <p>
-      © 2026 Miu Atelier
-    </p>
-
+    <p>© 2026 Miu Atelier</p>
   </footer>
+
+  <!-- noteへのクリック計測 -->
+  <script>
+    document.querySelectorAll('[data-note-link]').forEach(function(link) {
+      link.addEventListener('click', function() {
+        if (typeof gtag === 'function') {
+          gtag('event', 'note_click', {
+            link_destination: link.href,
+            link_location: link.dataset.noteLink
+          });
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
